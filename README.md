@@ -20,7 +20,7 @@ Email: rz496@cornell.edu
 
 ## Links to Reports / Outputs  
 - [Checkpoint 3](https://github.com/Ristine528/VTPEH6270_Checkpoint05/blob/main/output/reports/VTPEH6105-HW03.pdf)
-- Checkpoint 4   
+- [Checkpoint 4 ](https://github.com/Ristine528/VTPEH6270_Checkpoint05/blob/main/output/reports/HW04.pdf)
 
 ---
 
