@@ -14,7 +14,7 @@ Email: rz496@cornell.edu
 ## Data Sources and Citations  
 - NHANES (National Health and Nutrition Examination Survey)  
 - Subset dataset used for analysis: [Subset data](https://github.com/Ristine528/VTPEH6270_Checkpoint05/blob/main/data/HDR23-24_subset%20(2).csv)
-- Original dataset: Complete NHANES data  
+- Original dataset: [Complete NHANES data](https://github.com/Ristine528/VTPEH6270_Checkpoint05/blob/main/data/HDR23-24_complete_key.xlsx)  
 
 ---
 
