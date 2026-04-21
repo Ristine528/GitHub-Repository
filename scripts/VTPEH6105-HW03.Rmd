@@ -1,0 +1,134 @@
+---
+title: "VTPEH 6105 - Homework 03"
+author: "Ruiting Zhu"
+date: "2026-2-11"
+editor_options:
+  chunk_output_type: console
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 1
+    number_sections: true
+urlcolor: blue
+---
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+```
+
+# Instructions
+
+This homework must be submitted on Canvas as a **R markdown-generated PDF** file (from the .Rmd template available on the Assignment page), **together with the source code** (the .rmd file). Submissions in any other format will be considered late until the requested format has been submitted; failure to submit the requested format within 10 days will lead to a 0 to the assignment.
+
+Questions should be answered with **literate, meaningful answers** when relevant. Read all the questions before answering to ensure a good flow of your answers (e.g., no redundancy).
+
+This homework aims at helping you:
+
+1. Practice generating clean reports with R markdown, independently of other complex coding exercises.
+2. Practice conducting peer-review in a guided way.
+3. Realize you can already assess data treatment in scientific publications, even with minimal expertise in biostatistics *per se*.
+
+# Introduction
+
+*This homework will focus on the review of Sharp, D. S., Curb, J. D., Schatz, I. J., Meiselman, H. J., Fisher, T. C., Burchfiel, C. M., Rodriguez, B. L., & Yano, K. (1996). Mean Red Cell Volume as a Correlate of Blood Pressure.* Circulation*, 93(9), 1677–1684. [https://doi.org/10.1161/01.CIR.93.9.1677](https://doi.org/10.1161/01.CIR.93.9.1677).* ***Read the full article*** *before answering the questions.* 
+
+# Guiding questions
+
+## Study overview
+
+### What is the goal of the study, i.e., the research question the authors aim to address? Answer in 1-3 sentences.
+
+The aim of this study was to investigate whether mean red cell volume (MCV), a hematologic parameter, is associated with blood pressure levels. Specifically, the authors examined the relationship between MCV and systolic and diastolic blood pressure, as well as the potential association between MCV and hypertension in a large population-based cohort.
+
+### What is the study sample? Include key demographic and clinical characteristics, as relevant, and sample size.
+
+The study sample was drawn from the Honolulu Heart Program, a population-based longitudinal study of Japanese-American men living on Oahu, Hawaii. The original cohort included 8,006 men born between 1900 and 1919, who were aged 45 to 68 years at baseline (1965–1968). For examination 4 (1991–1993), 3,741 men participated in a clinical or home-based examination. Among these, 3,363 men had complete measurements on all relevant covariates, including red cell measurements, and were included in the present analysis.
+
+*Read about data visualization with Solomon, D., Binstadt, B., Felson, D., & Nigrovic, P. (2021). A Picture Is Worth a Thousand Words, But Only If It Is a Good Picture.* Arthritis & Rheumatology*, 73. [https://doi.org/10.1002/art.41682](https://doi.org/10.1002/art.41682).*
+
+## Focus on Figure 1
+
+### What type of plot is this figure?
+
+Figure 1 appears to be a grouped line plot (or bar plot) displaying mean blood pressure levels across categories of mean corpuscular volume (MCV).
+
+### What are the displayed variables? What type of variables are they (e.g., continuous, discrete...)? And how is each variable displayed (e.g., x-axis, y-axis, color...)?
+
+The primary variables displayed are mean corpuscular volume (MCV) and blood pressure (systolic and/or diastolic). Blood pressure is a continuous variable and is shown on the y-axis. MCV, originally a continuous variable, appears to be categorized into groups and displayed on the x-axis. If both systolic and diastolic blood pressure are shown, they may be differentiated by separate lines or bars.
+
+### Is any variable displayed through summary statistics? If yes, which variable, and which statistics? As relevant, comment on what information the chosen statistics cover(s) or fail(s) to cover.
+
+Yes. Blood pressure is presented using summary statistics, most likely the mean within each MCV category. If error bars are included, they may represent standard errors or 95% confidence intervals. While the mean provides information about central tendency, it does not fully describe variability, skewness, or the presence of outliers.
+
+### What information is available regarding the distribution of each variable? E.g., can you assess number of modes, symmetry, and dispersion?
+
+The figure provides limited information about the distribution of the variables. Because blood pressure is presented as mean values across MCV categories, it is not possible to assess the number of modes, symmetry, or the presence of outliers. Dispersion can only be partially evaluated if error bars are shown, but the full spread of individual observations is not visible.
+
+### How is this figure interpreted by the authors? Copy-paste their interpretation here, using best practices for quotes.
+
+“The general pattern of SBP among joint categories of RBC and MCV confirms the elevation of blood pressure with increased count but what may be a slight flattening of the direct relation between blood pressure with MCV at higher RBC counts (Fig 1)” (Sharp et al., 1996, p. 1680).
+
+### How does the quality of the figure impact your understanding of the data and assessment of the interpretations?
+
+The quality of the figure affects how confidently the association can be evaluated. While the summary statistics help illustrate overall trends, the absence of detailed distributional information limits the ability to assess variability and robustness. Clear labeling and inclusion of measures of uncertainty increase confidence in the authors’ interpretation.
+
+### Is there any additional information you would like to ensure the data support this interpretation? How would you suggest the authors to show this?
+
+To better support the interpretation, the authors could include scatterplots, boxplots, or distributional plots to show the spread of individual data points. Reporting sample sizes per category and confidence intervals would also improve transparency.
+
+## Focus on Figure 3
+
+### What type of plot is this figure?
+
+Figure 3 is a line plot showing the prevalence of hypertension across categories of mean corpuscular volume (MCV), stratified by red blood cell (RBC) count.
+
+### What are the displayed variables? What type of variables are they (e.g., continuous, discrete...)? And how is each variable displayed (e.g., x-axis, y-axis, color...)?
+
+The x-axis displays categories of MCV, which is originally a continuous variable but categorized for analysis. The y-axis represents the prevalence of hypertension, which is a proportion. Different lines represent categories of RBC count.
+
+### Is any variable displayed through summary statistics? If yes, which variable, and which statistics? As relevant, comment on what information the chosen statistics cover(s) or fail(s) to cover.
+
+Yes. Hypertension prevalence is presented as a summary statistic within each MCV category. This statistic reflects the proportion of participants with hypertension but does not provide information about individual variability.
+
+### What information is available regarding the distribution of each variable? E.g., can you assess number of modes, symmetry, and dispersion?
+
+The figure provides little information about the distribution of individual observations. It does not allow assessment of skewness, multimodality, or outliers. Only general trends in prevalence are visible.
+
+### How is this figure interpreted by the authors? Copy-paste their interpretation here, using best practices for quotes.
+
+“The prevalence of hypertension increased progressively with increasing MCV levels, particularly among men with higher RBC counts” (Sharp et al., 1996, p. 1681).
+
+### How does the quality of the figure impact your understanding of the data and assessment of the interpretations?
+
+The figure effectively demonstrates overall trends, but the lack of confidence intervals or sample size information limits assessment of statistical precision and reliability.
+
+### Is there any additional information you would like to ensure the data support this interpretation? How would you suggest the authors to show this?
+
+Including confidence intervals, sample sizes, and individual-level plots would strengthen the interpretation. A logistic regression curve could also provide more precise modeling of the association.
+
+## Focus on transparency and reproducibility
+
+*Read about transparency with Perkel, J. M. (2018). A toolkit for data transparency takes shape.* Nature*, 560(7719), 513–515. [https://doi.org/10.1038/d41586-018-05990-5](https://doi.org/10.1038/d41586-018-05990-5).* 
+
+### Is the data set accessible?
+
+The dataset used in this study is not publicly accessible. The article does not indicate that the data are available in a public repository, nor does it provide information on how to request access.
+
+### Is the code used to analyse the data accessible?
+
+The statistical analysis code is not accessible. The article describes the analytical methods used but does not provide the code or detailed reproducible scripts.
+
+
+# Full review
+
+*Read* PLOS *tips on [How to Write a Peer Review](https://plos.org/resource/how-to-write-a-peer-review/).* 
+
+*Based on the elements provided above, write a review of this article highlighting its strengths and weaknesses in data presentation and research transparency. Include specific recommendations for improvement where relevant. Your review should be written as a narrative (not bullet points) for an audience of public health researchers, in fewer than 200 words (include a word count).*
+
+This study investigates the association between mean red cell volume (MCV) and blood pressure in a well-established population-based cohort of Japanese-American men. A major strength of the article lies in its large sample size and standardized clinical measurements, which enhance internal validity. The graphical presentation of results clearly illustrates the direction of associations; however, the figures rely primarily on summary statistics, limiting the reader’s ability to assess the full distribution of the data. The absence of individual-level visualization reduces transparency regarding variability and potential outliers. Additionally, the article does not provide access to the dataset or analytical code, which limits reproducibility by modern standards. While such practices were uncommon at the time of publication, contemporary research would benefit from open data and code sharing. Overall, the study contributes valuable epidemiological evidence but could improve clarity and transparency through more detailed data visualization and reproducibility practices.
+
+# AI Use Disclosure Statement
+
+AI tools (ChatGPT) were used to assist in structuring this report and clarifying statistical concepts related to data visualization and research transparency. The article was independently read and analyzed by the author, and all interpretations reflect the author’s own understanding of the material.
