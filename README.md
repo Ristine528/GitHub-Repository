@@ -10,12 +10,32 @@ This study examines whether gender differences exist in health conditions, sympt
 Email: rz496@cornell.edu  
 
 ---
+## Data Sources and Citations
 
-## Data Sources and Citations  
-- NHANES (National Health and Nutrition Examination Survey)  
-- Subset dataset used for analysis: [Subset data](https://github.com/Ristine528/VTPEH6270_Checkpoint05/blob/main/data/HDR23-24_subset%20(2).csv)
-- Original dataset: [Complete NHANES data](https://github.com/Ristine528/VTPEH6270_Checkpoint05/blob/main/data/HDR23-24_complete_key.xlsx)  
+- NHANES (National Health and Nutrition Examination Survey)
+- CDC PLACES: Local Data for Better Health (County Data 2023 release)
 
+### Data Access
+
+The datasets used in this project are not included in this repository due to file size limitations.
+
+All data are automatically downloaded and processed using the following script:
+scripts/download_data.R
+
+### What this script does:
+
+- Downloads required datasets from public sources  
+- Unzips and organizes files into the local project directory  
+- Loads cleaned data into R for analysis  
+
+### Reproducibility
+
+This ensures that the entire analysis can be fully reproduced without manually downloading any data.
+
+### Data Source Links
+
+- NHANES: https://www.cdc.gov/nchs/nhanes/
+- CDC PLACES: https://www.cdc.gov/places/
 ---
 
 ## Links to Reports / Outputs  
