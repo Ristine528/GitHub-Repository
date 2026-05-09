@@ -10,6 +10,7 @@ This study examines whether gender differences exist in health conditions, sympt
 Email: rz496@cornell.edu  
 
 ---
+
 ## Data Sources and Citations
 
 - NHANES (National Health and Nutrition Examination Survey)
@@ -22,10 +23,11 @@ The datasets used in this project are not included in this repository due to fil
 All data are automatically downloaded and processed using the following script:
 scripts/download_data.R
 
-### What this script does:
+### Data Processing
 
+The script:
 - Downloads required datasets from public sources  
-- Unzips and organizes files into the local project directory  
+- Extracts and organizes files into the local directory  
 - Loads cleaned data into R for analysis  
 
 ### Reproducibility
@@ -36,19 +38,33 @@ This ensures that the entire analysis can be fully reproduced without manually d
 
 - NHANES: https://www.cdc.gov/nchs/nhanes/
 - CDC PLACES: https://www.cdc.gov/places/
+
 ---
 
 ## Links to Reports / Outputs  
 - [Checkpoint 3](https://github.com/Ristine528/VTPEH6270_Checkpoint05/blob/main/output/reports/VTPEH6105-HW03.pdf)
-- [Checkpoint 4 ](https://github.com/Ristine528/VTPEH6270_Checkpoint05/blob/main/output/reports/HW04.pdf)
+- [Checkpoint 4](https://github.com/Ristine528/VTPEH6270_Checkpoint05/blob/main/output/reports/HW04.pdf)
 
 ---
 
-## Data Usage  
+## Shiny App
+
+The interactive Shiny application for this project is located in the `shiny_app` folder.
+
+### How to run the app
+
+To launch the application, open R and run:
+
+```r
+shiny::runApp("shiny_app")
+Description
+
+The Shiny app provides interactive visualizations and allows users to explore key findings from the analysis.
+
+Data Usage
+
 All analyses in this project were conducted using the provided subset dataset.
 
----
+AI Tool Disclosure
 
-## AI Tool Disclosure  
 I used ChatGPT to help clarify statistical concepts, improve wording, and assist with R programming. All analyses and interpretations were independently reviewed and verified by me.
-
